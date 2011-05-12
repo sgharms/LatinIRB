@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "latinverb/version"
+require "latinirb/version"
 
 Gem::Specification.new do |s|
   s.name        = "latinverb"
-  s.version     = Linguistics::Latin::Verb::LatinIRB::VERSION
+  s.version     = Linguistics::Latin::Util::LatinIRB::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Steven G. Harms"]
   s.email       = ["steven.harms@gmail.com"]
