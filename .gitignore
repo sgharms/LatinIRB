@@ -1,0 +1,11 @@
+pkg/*
+.DS_*
+*.gem
+*.sw?
+*.vim
+**/*.vim
+.bundle
+.rvmrc
+*doc
+tags
+TODO
