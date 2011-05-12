@@ -240,3 +240,10 @@ _very_ handy method.
 
 Steven G. Harms (http://stevengharms.com)
 
+## THANKS
+
+Thanks to the Austin Ruby coders group who answered questions that helped me put this all together.  Thanks also
+to the Reject^{2} conference at the Lone Star Ruby Conference 2008 who helped me think through some of the
+metaprogrammatic approaches.  Thanks to Professor James Burleson of Austin Community College who insisted,
+old-style, of a mastery of the rote basics of Latin.  Thanks also to Lauren Roth ( http://www.laurennroth.com)
+for her support and encouragement and understanding of my pre-dawn hack sessions.
