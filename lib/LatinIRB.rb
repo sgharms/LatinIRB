@@ -33,13 +33,20 @@ module Linguistics
           instance_variables.each{|x| puts "  * #{x}"}
 
           # Pretend to tell IRB to parse the options from the command line
-          # Put this one first
+          # Put this one first.  This will be the script IRB sources on
+          # execution
           ARGV.unshift "lib/latirb.rb"
           
-          ARGV.unshift "--noverbose"
-          ARGV.unshift "-U"
-          ARGV.unshift "-rlatinverb"
+          # No, do not tell me what  you read in
           ARGV.unshift "--noecho"
+          # Nor tell me how it evaluated
+          ARGV.unshift "--noverbose"
+
+          # Let's make sure we're using Unicode
+          ARGV.unshift "-U"
+
+          # Include the LatinVerb library so that you can play with the variables
+          ARGV.unshift "-rlatinverb"
           
           # Taken from irb.rb's IRB.start method.  I trimmed out some of the
           # conditional possibilities that I did not want to handle here
