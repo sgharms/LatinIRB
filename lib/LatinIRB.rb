@@ -10,28 +10,16 @@ require 'pp'
 # Monkey-patch to change the gets behavior.  In the gem, the FileInputMethod
 # class's 'gets' method always prints out what was read.  This should be
 # suppressed by the IRB class's Context class's ECHO state, but this is not
-# used, probably a bug.
-#
-#
+# used, possibly a bug depending on what the semantics of that @echo variable
+# are meant to mean
+
+
 module IRB
   class FileInputMethod < InputMethod
     def gets
       @io.gets
     end
   end
-
-  class StdioOutputMethod<OutputMethod
-    def printf(format, *opts)
-      raise "zabu"
-    end
-    def puts(format, *opts)
-      raise "zabu"
-    end
-    def print(*opts)
-      STDOUT.print(*opts)
-    end
-  end
-
 end
 
 module Linguistics
@@ -39,21 +27,51 @@ module Linguistics
     module Util
       class LatinIRB
         def self.begin
-          puts "Beginning a LatinVerb session..."
-          puts"Check presence of p'dgm verb: #{@aFirst}\n\n"
-          #debugger
+          puts "Beginning a LatinVerb session."
+          puts "The following verbs have been made available to this session via latirb.rb:"
 
-          # Pretend to ell IRB to parse the options from the command line
+          instance_variables.each{|x| puts "  * #{x}"}
 
-# Put this one first
-ARGV.unshift "latirb.rb"
+          # Pretend to tell IRB to parse the options from the command line
+          # Put this one first
+          ARGV.unshift "lib/latirb.rb"
+          
+          ARGV.unshift "--noverbose"
+          ARGV.unshift "-U"
+          ARGV.unshift "-rlatinverb"
+          ARGV.unshift "--noecho"
+          
+          # Taken from irb.rb's IRB.start method.  I trimmed out some of the
+          # conditional possibilities that I did not want to handle here
+          # (because they're not necessary).
+          
+          # Run the basic setup script and pull the configuration object back
+          # into the present scope
+          IRB.setup(nil)
+          @CONF = IRB.conf
+
+          # Create an irb object that is programmed to (silently, per above)
+          # source a configuration file that ends with a call to 'irb' itself
+          # after defining several instance variables
+          
+          irb = IRB::Irb.new(nil, @CONF[:SCRIPT])
 
 
-ARGV.unshift "-U"
-ARGV.unshift "-r latinverb"
-ARGV.unshift "--noecho"
+          @CONF[:IRB_RC].call(irb.context) if @CONF[:IRB_RC]
+          @CONF[:MAIN_CONTEXT] = irb.context
 
-IRB::start
+          trap("SIGINT") do
+            irb.signal_handle
+          end
+
+          begin
+            catch(:IRB_EXIT) do
+              # Start the REPL
+              irb.eval_input
+            end
+          end
+
+          puts "Salve!  Come back to LatinIRB soon."
         end
       end
     end
