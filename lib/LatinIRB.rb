@@ -64,12 +64,12 @@ module Linguistics
 
           # Create a LatinIRB prompt
           @CONF[:PROMPT][:LATINIRB] = {
-                                        :PROMPT_I=>"LatinIRB > ", 
-                                        :PROMPT_S=>"LatinIRB%l> ",
-                                        :PROMPT_C=>"LatinIRB > ", 
-                                        :PROMPT_N=>"LatinIRB ?> ",
-                                        :RETURN=>" => %s \n",
-                                        :AUTO_INDENT=>true
+                                        :PROMPT_I    => "LatinIRB > ", 
+                                        :PROMPT_S    => "LatinIRB%l> ",
+                                        :PROMPT_C    => "LatinIRB > ", 
+                                        :PROMPT_N    => "LatinIRB ?> ",
+                                        :RETURN      => " => %s \n",
+                                        :AUTO_INDENT => true
                                       }
           @CONF[:PROMPT_MODE]=:LATINIRB
 
