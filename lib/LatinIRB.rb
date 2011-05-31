@@ -27,37 +27,34 @@ module Linguistics
     module Util
       class LatinIRB
         def self.begin
-          puts "Beginning a LatinVerb session."
-          puts "The following verbs have been made available to this session via latirb.rb:"
-
-          instance_variables.each{|x| puts "  * #{x}"}
-
-          puts "Tab-completion of the conjugation \"vectors\" is supported."
-
-          # Pretend to tell IRB to parse the options from the command line
-          # Put this one first.  This will be the script IRB sources on
-          # execution
-          ARGV.unshift "lib/latirb.rb"
+          #---
+          #
+          # This method is taken from irb.rb's IRB.start method.  I trimmed
+          # out some of the conditional possibilities that I did not want to
+          # handle here (because they're not necessary).
+          #
+          # Run the basic setup script and pull the configuration object
+          # (IRB::Context) back into the present scope.  Then we set that
+          # object's options and proceed.
+          #
+          #+++
           
-          # No, do not tell me what  you read in
-          ARGV.unshift "--noecho"
-          # Nor tell me how it evaluated
-          ARGV.unshift "--noverbose"
-
-          # Let's make sure we're using Unicode
-          ARGV.unshift "-U"
-
-          # Include the LatinVerb library so that you can play with the variables
-          ARGV.unshift "-rlatinverb"
-          
-          # Taken from irb.rb's IRB.start method.  I trimmed out some of the
-          # conditional possibilities that I did not want to handle here
-          # (because they're not necessary).
-          
-          # Run the basic setup script and pull the configuration object back
-          # into the present scope
           IRB.setup(nil)
           @CONF = IRB.conf
+
+          # This will be the script IRB sources on execution. You can
+          # pre-define variables (@aFirst, etc.) and convenience methods here.
+
+          @CONF[:SCRIPT]="lib/latirb.rb"
+
+          # No, do not tell me what you read in
+          @CONF[:ECHO]=false
+
+          # Nor tell me how it evaluated
+          @CONF[:VERBOSE]=false
+
+          # We need this module
+          @CONF[:LOAD_MODULES]=["latinverb"]
 
           # Create an irb object that is programmed to (silently, per above)
           # source a configuration file that ends with a call to 'irb' itself
@@ -76,7 +73,19 @@ module Linguistics
                                       }
           @CONF[:PROMPT_MODE]=:LATINIRB
 
+          # Unless this is set, eval_input will fail.  Make sure this is
+          # set.
           @CONF[:MAIN_CONTEXT] = irb.context
+
+          # We have finished the configuration at this point, so now we need
+          # to kick up the REPL after providing preliminary instruction.
+          puts "Beginning a LatinVerb session."
+
+          puts "The following verbs have been made available to this session via latirb.rb:"
+
+          instance_variables.grep(/[a-z]/).each{|x| puts "  * #{x}"}
+
+          puts "Tab-completion of the conjugation \"vectors\" is supported."
 
           trap("SIGINT") do
             irb.signal_handle
