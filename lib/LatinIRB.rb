@@ -32,6 +32,8 @@ module Linguistics
 
           instance_variables.each{|x| puts "  * #{x}"}
 
+          puts "Tab-completion of the conjugation \"vectors\" is supported."
+
           # Pretend to tell IRB to parse the options from the command line
           # Put this one first.  This will be the script IRB sources on
           # execution
