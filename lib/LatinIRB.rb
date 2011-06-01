@@ -98,7 +98,7 @@ module Linguistics
             end
           end
 
-          puts "Salve!  Come back to LatinIRB soon."
+          puts "Vale!  Come back to LatinIRB soon."
         end
       end
     end
