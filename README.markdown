@@ -58,6 +58,8 @@ number / and person
 
 ### CHART VIEW
 
+*Currently Unimplemented:  1 June 2011:  Implementation underway*
+
 To view the chart of a verb, use LatinVerb.chart\_display.  This is a basic
 chart that will look familiar to students.  
 
@@ -76,10 +78,6 @@ Several convenience methods exist which load multiple tenses at the same time su
 methods load the tenses into the @collections iVar associated with the LatinVerb.  This value can be accessed as @collections
 is shared per attr\_reader
 
-### CHART VIEW
-
-By using the LatinDisplay.chart\_view, a chart, much like what is found in verb references can be had for the verb.  This is a
-_very_ handy method.
 
 ### Comprehensive List of Singular Vectors
 
