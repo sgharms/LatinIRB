@@ -19,7 +19,7 @@ exploration.  These are the standard paradigmatics verbs presented in
 Wheelock:
 
 <table>
-  <tr><th>Varible  </th> <th>Parts                      </th> <td> meaning</td></tr>
+  <tr><th>Varible  </th> <th>Parts                      </th> <th> Meaning</th></tr>
   <tr><td>@aFirst  </td> <td>amō   amāre  amāvī  amatum </td> <td> to love / like</td></tr>
   <tr><td>@aSecond </td> <td>moneō monēre monvī  monitum</td> <td> to warn / advise</td></tr>
   <tr><td>@aThird  </td> <td>agō   agere  ēgī    actum  </td> <td> to do / lead / undertake</td></tr>
