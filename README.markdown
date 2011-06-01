@@ -15,15 +15,17 @@ An primary use case would be:
   @aFirst.active\_voice\_indicative\_mood\_present\_tense\_first\_person\_singular\_number #=> amō
 
 Upon opening the script, the student may play with verbs offered for
-exploration.  These are the standard paradigumatics verbs presented in
+exploration.  These are the standard paradigmatics verbs presented in
 Wheelock:
 
-     Varible  :            Parts            : meaning
-  * LatinVerb : amō   amāre  amāvī  amatum  : to love / like
-  * @aSecond  : moneō monēre monvī  monitum : to warn / advise
-  * @aThird   : agō   agere  ēgī    actum   : to do / lead / undertake
-  * @aThirdIO : capiō capere cēpī   captum  : to grab / seize
-  * @aFourth  : audiō audīre audīvī auditum : to hear
+<table>
+  <tr><th>Varible  </th> <th>Parts                      </th> <td> meaning</td></tr>
+  <tr><td>@aFirst  </td> <td>amō   amāre  amāvī  amatum </td> <td> to love / like</td></tr>
+  <tr><td>@aSecond </td> <td>moneō monēre monvī  monitum</td> <td> to warn / advise</td></tr>
+  <tr><td>@aThird  </td> <td>agō   agere  ēgī    actum  </td> <td> to do / lead / undertake</td></tr>
+  <tr><td>@aThirdIO</td> <td>capiō capere cēpī   captum </td> <td> to grab / seize</td></tr>
+  <tr><td>@aFourth </td> <td>audiō audīre audīvī auditum</td> <td> to hear</td></tr>
+</table>
 
 ## INSTANTIATING
 
