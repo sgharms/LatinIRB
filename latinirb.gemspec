@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "latinirb/version"
 
 Gem::Specification.new do |s|
-  s.name        = "latinverb"
+  s.name        = "latinirb"
   s.version     = Linguistics::Latin::Util::LatinIRB::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Steven G. Harms"]
