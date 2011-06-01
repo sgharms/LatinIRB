@@ -11,8 +11,7 @@ require 'pp'
 # class's 'gets' method always prints out what was read.  This should be
 # suppressed by the IRB class's Context class's ECHO state, but this is not
 # used, possibly a bug depending on what the semantics of that @echo variable
-# are meant to mean
-
+# are meant to mean.
 
 module IRB
   class FileInputMethod < InputMethod
@@ -77,6 +76,15 @@ module Linguistics
           # set.
           @CONF[:MAIN_CONTEXT] = irb.context
 
+          # This corrects the tab-completion behavior as provided by
+          # irb/completion.rb.  In the even that what's tabbed-after matches
+          # the RegExp, it should invoke this process.  If the receiver is a
+          # LatinVerb, the full complement of vectors should be provided as
+          # complet-able.  IF NOT, then the pairing is passed to the standard
+          # CompletionProc.
+          
+          Readline.completion_proc = calculate_completion_proc
+
           # We have finished the configuration at this point, so now we need
           # to kick up the REPL after providing preliminary instruction.
           puts "Beginning a LatinVerb session."
@@ -100,6 +108,64 @@ module Linguistics
 
           puts "Vale!  Come back to LatinIRB soon."
         end
+
+        ##
+        #
+        # Used to override IRB::InputCompletor::select_message for handling
+        # tab-completion of instance variables.  Code is largely taken from
+        # that method with the addition of the /^@/ condition.  In
+        # IRB::Completor, when an array of matches has been identified, they
+        # are sent as the "candidates" while the "receiver" bears the match
+        # based on the regex of "message."
+        #
+        ##
+        
+        def self.select_message(receiver, message, candidates)
+          candidates.grep(/^#{message}/).collect do |e|
+            case e
+              when /^[a-zA-Z_]/
+                receiver + "." + e
+              when /^[0-9]/
+              when /^@/
+                e
+              when *Operators
+                #receiver + " " + e
+            end
+          end
+        end
+
+        ##
+        #
+        # As part of the TAB completion, Readline must be provided a
+        # completion proc that will be used to generate the matching results
+        # that will be appended to the line at whose end the TAB key was
+        # struck.  This method provides that proc.
+        #
+        ##
+
+        def self.calculate_completion_proc
+          proc do |input| 
+            bind = IRB.conf[:MAIN_CONTEXT].workspace.binding
+
+            input =~ /^([^."].*)\.([^.]*)$/
+            begin
+              receiver = $1
+              message = Regexp.quote($2)
+              rObj = instance_variable_get(receiver.to_sym)
+            rescue Exception
+            end
+
+            if rObj.class == Linguistics::Latin::Verb::LatinVerb
+              IRB::InputCompletor::select_message(receiver, message, rObj.instance_methods.grep(/^#{message}/))
+            elsif input =~ /^@/
+              # This handles instance variables.  input is @someInstanceVariable's @aSomeIn<TAB>
+              self.select_message(input, input, eval("instance_variables", bind).grep(/^@a/))
+            else
+              IRB::InputCompletor::CompletionProc.call input
+            end
+          end
+        end
+
       end
     end
   end
