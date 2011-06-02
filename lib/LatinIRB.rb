@@ -44,7 +44,7 @@ module Linguistics
           # This will be the script IRB sources on execution. You can
           # pre-define variables (@aFirst, etc.) and convenience methods here.
 
-          @CONF[:SCRIPT]="lib/latirb.rb"
+          @CONF[:SCRIPT]=File.join(File.dirname(__FILE__),  %w|latirb.rb|)
 
           # No, do not tell me what you read in
           @CONF[:ECHO]=false

@@ -3,7 +3,7 @@ module Linguistics
   module Latin
     module Util
       class LatinIRB
-        VERSION = "0.2.0" # :nodoc:
+        VERSION = "0.3.0" # :nodoc:
       end
     end
   end
