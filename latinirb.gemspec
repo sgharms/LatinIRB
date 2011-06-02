@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'latinverb', '= 0.9.0'
   s.add_runtime_dependency 'macronconversions'
+  s.add_runtime_dependency 'verbvector'
 
 
 end
