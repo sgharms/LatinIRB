@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency 'latinverb', '= 0.9.0'
+  s.add_runtime_dependency 'latinverb', '>= 0.9.0'
   s.add_runtime_dependency 'macronconversions'
   s.add_runtime_dependency 'verbvector'
   s.add_runtime_dependency 'active_support', '>= 3.0'
