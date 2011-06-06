@@ -3,7 +3,7 @@
 require 'irb'
 require 'irb/completion'
 require 'latinverb'
-require 'latinirb/paradigmatic_verbs'
+#require 'latinirb/paradigmatic_verbs'
 require 'macronconversions'
 require 'pp'
 
@@ -91,7 +91,14 @@ module Linguistics
 
           puts "The following verbs have been made available to this session via latirb.rb:"
 
-          instance_variables.grep(/[a-z]/).each{|x| puts "  * #{x}"}
+          # Open the file and extract the names of the variables that can be
+          # used for autocompletion
+          @irb_ivars = 
+            File::open(irb.context.io.file_name).readlines.grep(/^@/).map do |x| 
+              x.sub /(@\w+)\s.*\n/, "\\1" 
+            end
+          @irb_ivars.each{|x| puts "  * #{x}\n"}
+
 
           puts "Tab-completion of the conjugation \"vectors\" is supported."
 
@@ -151,7 +158,9 @@ module Linguistics
             begin
               receiver = $1
               message = Regexp.quote($2)
-              rObj = instance_variable_get(receiver.to_sym)
+              
+              # Pull the object from the binding
+              rObj = eval("instance_variable_get(:#{receiver})", bind)
             rescue Exception
             end
 
@@ -159,7 +168,7 @@ module Linguistics
               IRB::InputCompletor::select_message(receiver, message, rObj.instance_methods.grep(/^#{message}/))
             elsif input =~ /^@/
               # This handles instance variables.  input is @someInstanceVariable's @aSomeIn<TAB>
-              self.select_message(input, input, eval("instance_variables", bind).grep(/^@a/))
+              self.select_message input, input, eval("instance_variables", bind).grep(/@[at]/)
             else
               IRB::InputCompletor::CompletionProc.call input
             end
