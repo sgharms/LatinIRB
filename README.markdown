@@ -58,16 +58,14 @@ number / and person
 
 ### CHART VIEW
 
-*Currently Unimplemented:  1 June 2011:  Implementation underway*
-
-To view the chart of a verb, use LatinVerb.chart\_display.  This is a basic
+To view the chart of a verb, use LatinVerb.chart.  This is a basic
 chart that will look familiar to students.  
 
 ### SINGULAR VECTOR
 
 As such methods are of the form 
 
-  (active|passive)\_voice\_(indicative|subjunctive)\_mood\_(present|imperfect|perfect|pastperfect|futureperfect|etc.)tense\_first\_person\_singular\_number
+  (active|passive)\_voice\_(indicative|subjunctive)\_mood\_(present|imperfect|perfect|pastperfect|futureperfect|etc.)tense\_(first|second|third)\_person\_(singular|plural)\_number
 
 This will return a single value.  Where the result is ambiguous (e.g. 'number' is not provided) multiple values are returned.
 an exhaustive list of options follows below.
@@ -222,19 +220,59 @@ is shared per attr\_reader
   * LatinVerb.passive\_voice\_subjunctive\_mood\_pastperfect\_tense\_second\_person\_plural\_number
   * LatinVerb.passive\_voice\_subjunctive\_mood\_pastperfect\_tense\_third\_person\_plural\_number
              
-  * LatinVerb.imperatives[0]
-  * LatinVerb.imperatives[1]
-             
+  * LatinVerb.active\_voice\_imperative\_mood\_future\_tense
+  * LatinVerb.active\_voice\_imperative\_mood\_present\_tense
+  * LatinVerb.imperatives (_aggregator method_)
+
   * LatinVerb.present\_active\_participle 
   * LatinVerb.future\_active\_participle
   * LatinVerb.perfect\_passive\_participle
   * LatinVerb.future\_passive\_participle
              
-  * LatinVerb.present\_active\_infinitive
-  * LatinVerb.perfect\_active\_infinitive
+  * LatinVerb.infinitives (_aggregator method_ : returns a keyed hash)
   * LatinVerb.future\_active\_infinitive
+  * LatinVerb.future\_passive\_infinitive
+  * LatinVerb.perfect\_active\_infinitive
+  * LatinVerb.perfect\_passive\_infinitive
+  * LatinVerb.present\_active\_infinitive
   * LatinVerb.present\_passive\_infinitive
-  * LatinVerb.perfect\_passive\_infinitive)
+
+### Ambiguous Methods
+  A voice, mood, and tense are all required for resolution of answers.
+  LatinVerb does not repsect ambiguity in those vectors.  It _does_ respect
+  ambiguity in the person and number specifiers.  Thus, you *may* say:
+
+
+  * LatinVerb.active\_voice\_indicative\_mood\_present\_tense\_first\_person
+  * LatinVerb.active\_voice\_indicative\_mood\_present\_tense\_singular\_number
+
+  This will return an array containing all possible candidates.  Thus, for
+  each of the items below <em>(first|second|third)_person</em> or
+  <em>(singular|plural)_number</em> may be postpended.
+
+  * LatinVerb.active\_voice\_imperative\_mood\_future\_tense
+  * LatinVerb.active\_voice\_imperative\_mood\_present\_tense
+  * LatinVerb.active\_voice\_indicative\_mood\_future\_tense
+  * LatinVerb.active\_voice\_indicative\_mood\_futureperfect\_tense
+  * LatinVerb.active\_voice\_indicative\_mood\_imperfect\_tense
+  * LatinVerb.active\_voice\_indicative\_mood\_pastperfect\_tense
+  * LatinVerb.active\_voice\_indicative\_mood\_perfect\_tense
+  * LatinVerb.active\_voice\_indicative\_mood\_present\_tense
+  * LatinVerb.active\_voice\_subjunctive\_mood\_imperfect\_tense
+  * LatinVerb.active\_voice\_subjunctive\_mood\_pastperfect\_tense
+  * LatinVerb.active\_voice\_subjunctive\_mood\_perfect\_tense
+  * LatinVerb.active\_voice\_subjunctive\_mood\_present\_tense
+  * LatinVerb.passive\_voice\_indicative\_mood\_future\_tense
+  * LatinVerb.passive\_voice\_indicative\_mood\_futureperfect\_tense
+  * LatinVerb.passive\_voice\_indicative\_mood\_imperfect\_tense
+  * LatinVerb.passive\_voice\_indicative\_mood\_pastperfect\_tense
+  * LatinVerb.passive\_voice\_indicative\_mood\_perfect\_tense
+  * LatinVerb.passive\_voice\_indicative\_mood\_present\_tense
+  * LatinVerb.passive\_voice\_subjunctive\_mood\_imperfect\_tense
+  * LatinVerb.passive\_voice\_subjunctive\_mood\_pastperfect\_tense
+  * LatinVerb.passive\_voice\_subjunctive\_mood\_perfect\_tense
+  * LatinVerb.passive\_voice\_subjunctive\_mood\_present\_tense
+
 
 ## AUTHOR
 
