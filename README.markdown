@@ -4,7 +4,8 @@
 
 LatinIRB is an IRB session in which a user can interact with paradigmatic
 Latin verbs (`@aFirst`, `@aSecond`, `@aThird`, `@aThirdIO`, `@aFourth`) as
-calculated heuristically by the LatinVerb library.  
+calculated heuristically by the
+[LatinVerb](https://github.com/sgharms/LatinVerb) library.
 
 The methods of chief interest will be those that are _vectors_ within the
 LatinVerb parlance i.e. methods that uniquely identify a specific conjugated
@@ -14,9 +15,9 @@ An primary use case would be:
   
   @aFirst.active\_voice\_indicative\_mood\_present\_tense\_first\_person\_singular\_number #=> amō
 
-Upon opening the script, the student may play with verbs offered for
+Upon opening the session, the student may play with verbs offered for
 exploration.  These are the standard paradigmatics verbs presented in
-Wheelock:
+Wheelock as well as three core irregular verbs:
 
 <table>
   <tr><th>Varible  </th> <th>Parts                      </th> <th> Meaning</th></tr>
@@ -25,6 +26,9 @@ Wheelock:
   <tr><td>@aThird  </td> <td>agō   agere  ēgī    actum  </td> <td> to do / lead / undertake</td></tr>
   <tr><td>@aThirdIO</td> <td>capiō capere cēpī   captum </td> <td> to grab / seize</td></tr>
   <tr><td>@aFourth </td> <td>audiō audīre audīvī auditum</td> <td> to hear</td></tr>
+  <tr><td>@toBe    </td> <td>sum   esse   fuī    futūrus</td> <td> to be </td></tr>
+  <tr><td>@toCarry </td> <td>ferō  ferre  tulī   lātum</td>   <td> to carry </td></tr>
+  <tr><td>@toCome  </td> <td>eō    īre    īvī    itum</td>    <td> to come </td></tr>
 </table>
 
 ## INSTANTIATING
@@ -51,31 +55,30 @@ both understand it.
 
   LatinVerb.new %w(amō   amāre  amāvī  amatum)
 
-## EXECUTING METHODS  
-
-Every verb in latin is a "vector" comprised of the voice / mood / tense /
-number / and person
-
 ### CHART VIEW
 
 To view the chart of a verb, use LatinVerb.chart.  This is a basic
 chart that will look familiar to students.  
 
+## EXECUTING METHODS
+
+Every verb in latin is a "vector" comprised of the voice / mood / tense /
+number / and person.
+
 ### SINGULAR VECTOR
 
-As such methods are of the form 
+As such methods are of the form:
 
   (active|passive)\_voice\_(indicative|subjunctive)\_mood\_(present|imperfect|perfect|pastperfect|futureperfect|etc.)tense\_(first|second|third)\_person\_(singular|plural)\_number
 
-This will return a single value.  Where the result is ambiguous (e.g. 'number' is not provided) multiple values are returned.
-an exhaustive list of options follows below.
+This will return a single value.  Where the result is ambiguous (e.g. 'number'
+is not provided) multiple values are returned.  an exhaustive list of options
+follows below.
 
 ### MULTIPLEX VECTORS
 
-Several convenience methods exist which load multiple tenses at the same time such as "present system" or "perfect system".  These
-methods load the tenses into the @collections iVar associated with the LatinVerb.  This value can be accessed as @collections
-is shared per attr\_reader
-
+Several convenience methods exist which load multiple vectors at the same time
+such as "present tense."  For their invocation, see below
 
 ### Comprehensive List of Singular Vectors
 
