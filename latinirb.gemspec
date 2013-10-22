@@ -12,18 +12,13 @@ Gem::Specification.new do |s|
   s.summary     = %q{Gem designed to explore verbs created by LatinVerb}
   s.description = %q{This gem takes initial data describing a LatinVerb and allows this is be instantiated into an IRB session.  Here the verb can be queried or displayed.}
 
-
-  s.rubyforge_project = "latinverb"
-
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency 'latinverb', '>= 0.9.0'
-  s.add_runtime_dependency 'macronconversions'
-  s.add_runtime_dependency 'verbvector'
-  s.add_runtime_dependency 'active_support', '>= 3.0'
+  s.add_development_dependency 'byebug'
 
-
+  s.add_runtime_dependency 'latinverb', '~> 0.9.4'
+  s.add_runtime_dependency 'activesupport', '>= 4'
 end
