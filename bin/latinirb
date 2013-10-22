@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-# Add the gem libraries to the Ruby path
-$:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
-
-require 'latinirb'
+require 'active_support/all'
+require 'LatinIRB'
 Linguistics::Latin::Util::LatinIRB.begin

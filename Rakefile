@@ -1,14 +1,14 @@
 require 'bundler'
-require "rake/rdoctask" 
+require "rdoc/task"
+require "rake/testtask"
 
 Bundler::GemHelper.install_tasks
 
-# Generate documentation
-Rake::RDocTask.new do |rd| 
-rd.rdoc_files.include("lib/**/*.rb")
-rd.rdoc_dir = "rdoc" 
-end   
+task :default => :test
 
-#Added to get testing working
-require 'rake/testtask'
+RDoc::Task.new do |rd|
+  rd.rdoc_dir = "rdoc"
+  rd.rdoc_files.include("lib/**/*.rb")
+end
+
 Rake::TestTask.new(:test)

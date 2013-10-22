@@ -3,9 +3,6 @@
 require 'irb'
 require 'irb/completion'
 require 'latinverb'
-#require 'latinirb/paradigmatic_verbs'
-require 'macronconversions'
-require 'pp'
 
 # Monkey-patch to change the gets behavior.  In the gem, the FileInputMethod
 # class's 'gets' method always prints out what was read.  This should be
@@ -37,7 +34,7 @@ module Linguistics
           # object's options and proceed.
           #
           #+++
-          
+
           IRB.setup(nil)
           @CONF = IRB.conf
 
@@ -58,14 +55,14 @@ module Linguistics
           # Create an irb object that is programmed to (silently, per above)
           # source a configuration file that ends with a call to 'irb' itself
           # after defining several instance variables
-          
+
           irb = IRB::Irb.new(nil, @CONF[:SCRIPT])
 
           # Create a LatinIRB prompt
           @CONF[:PROMPT][:LATINIRB] = {
-                                        :PROMPT_I    => "LatinIRB > ", 
+                                        :PROMPT_I    => "LatinIRB > ",
                                         :PROMPT_S    => "LatinIRB%l> ",
-                                        :PROMPT_C    => "LatinIRB > ", 
+                                        :PROMPT_C    => "LatinIRB > ",
                                         :PROMPT_N    => "LatinIRB ?> ",
                                         :RETURN      => " => %s \n",
                                         :AUTO_INDENT => true
@@ -82,20 +79,20 @@ module Linguistics
           # LatinVerb, the full complement of vectors should be provided as
           # complet-able.  IF NOT, then the pairing is passed to the standard
           # CompletionProc.
-          
+
           Readline.completion_proc = calculate_completion_proc
 
           # We have finished the configuration at this point, so now we need
           # to kick up the REPL after providing preliminary instruction.
           puts "Beginning a LatinVerb session."
 
-          puts "The following verbs have been made available to this session via latirb.rb:"
+          puts "The following verbs have been made available to this session:"
 
           # Open the file and extract the names of the variables that can be
           # used for autocompletion
-          @irb_ivars = 
-            File::open(irb.context.io.file_name).readlines.grep(/^@/).map do |x| 
-              x.sub /(@\w+)\s.*\n/, "\\1" 
+          @irb_ivars =
+            File::open(irb.context.io.file_name).readlines.grep(/^@/).map do |x|
+              x.sub(/(@\w+)\s.*\n/, "\\1")
             end
           @irb_ivars.each{|x| puts "  * #{x}\n"}
 
@@ -126,7 +123,7 @@ module Linguistics
         # based on the regex of "message."
         #
         ##
-        
+
         def self.select_message(receiver, message, candidates)
           candidates.grep(/^#{message}/).collect do |e|
             case e
@@ -151,14 +148,14 @@ module Linguistics
         ##
 
         def self.calculate_completion_proc
-          proc do |input| 
+          proc do |input|
             bind = IRB.conf[:MAIN_CONTEXT].workspace.binding
 
             input =~ /^([^."].*)\.([^.]*)$/
             begin
               receiver = $1
               message = Regexp.quote($2)
-              
+
               # Pull the object from the binding
               rObj = eval("instance_variable_get(:#{receiver})", bind)
             rescue Exception
@@ -174,7 +171,6 @@ module Linguistics
             end
           end
         end
-
       end
     end
   end
