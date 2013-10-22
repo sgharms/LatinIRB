@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'byebug'
 
-  s.add_runtime_dependency 'latinverb', '~> 0.9.4'
+  s.add_runtime_dependency 'latinverb', '~> 0.9.5'
   s.add_runtime_dependency 'activesupport', '>= 4'
 end
