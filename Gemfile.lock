@@ -5,10 +5,7 @@ PATH
       activesupport (>= 4)
       latinverb (~> 0.9.5)
       latinverb_chart_presenter
-      latinverb_irregular_imperatives_retriever
-      latinverb_irregular_participles_retriever
       linguistics_latin
-      linguistics_latin_imperative_block
       macronconversions
 
 GEM
@@ -28,6 +25,7 @@ GEM
       latinverb_imperative_block
       latinverb_irregular_imperatives_retriever
       latinverb_irregular_infinitives_retriever
+      latinverb_irregular_participles_retriever
       latinverb_irregular_verb_definition_consumer
       latinverb_principal_parts_extractor
       latinverb_querent_for_classification_builder
@@ -62,7 +60,6 @@ GEM
       latinverb_deponent_string_deriver
       linguistics_latin (~> 0.0.2)
     linguistics_latin (0.0.2)
-    linguistics_latin_imperative_block (0.0.1)
     linguistics_latin_tense_block (0.0.1)
       linguistics_latin
     macronconversions (0.0.1)
