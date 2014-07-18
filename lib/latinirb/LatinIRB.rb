@@ -67,10 +67,31 @@ module Linguistics
         end
 
         def self.print_prelude
-          puts "Beginning a LatinVerb session."
-          puts "The following verbs have been made available to this session:"
-          puts "Tab-completion of the conjugation \"vectors\" is supported."
-          puts ""
+          puts <<-EOT
+The following verbs have been made available to this session:
+
+  * AFIRST   / AFIRST_DEP
+  * ASECOND  / ASECOND_DEP
+  * ATHIRD   / ATHIRD_DEP
+  * ATHIRDIO / ATHIRDIO_DEP
+  * AFOURTH  / AFOURTH_DEP
+
+As well as some primary irregulars:
+
+  * TO_BE
+  * TO_CARRY
+  * TO_COME
+
+Tab-completion of the conjugation \"vectors\" is supported.
+
+Helpful methods `chart(verb)` which prints a verb's chart as well as `b(verb)`
+which prints the
+`active_voice_indicative_mood_present_tense_first_person_singular_number` of
+`verb`.
+
+Verb strings can be entered using the LaTeX-style ASCII representations of
+macron-bearing letters e.g.: \\={e}, \\={a}, and NB: \\={\\i}
+          EOT
         end
 
         def self.set_required_main_irb_context
