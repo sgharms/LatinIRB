@@ -1,8 +1,10 @@
 require 'forwardable'
-require 'latinirb/version'
-require 'linguistics_latin'
-require 'linguistics_latin_imperative_block'
-require 'latinverb_chart_presenter'
-require 'latinverb'
+
 require 'macronconversions'
+require 'linguistics_latin'
+
+require 'latinverb'
+require 'latinverb_chart_presenter'
+
+require 'latinirb/version'
 require 'latinirb/LatinIRB'
