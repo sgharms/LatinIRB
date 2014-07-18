@@ -1,11 +1,3 @@
-# Basic definitions
-
-A_FIRST   = Linguistics::Latin::Verb::LatinVerb.new %q(amō   amāre  amāvī  amatum)
-A_SECOND  = Linguistics::Latin::Verb::LatinVerb.new %q(moneō monēre monvī  monitum)
-A_THIRD   = Linguistics::Latin::Verb::LatinVerb.new %q(agō   agere  ēgī    actum)
-A_THIRDIO = Linguistics::Latin::Verb::LatinVerb.new %q(capiō capere cēpī   captum)
-A_FOURTH  = Linguistics::Latin::Verb::LatinVerb.new %q(audiō audīre audīvī auditum)
-
 # Popular Irregulars
 TO_BE     = Linguistics::Latin::Verb::LatinVerb.new %q(sum esse fuī futūrus)
 TO_CARRY  = Linguistics::Latin::Verb::LatinVerb.new %q(ferō ferre tulī lātum)
