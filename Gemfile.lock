@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    latinirb (0.4.0)
+    latinirb (1.0.pre)
       activesupport (>= 4)
       latinverb (~> 0.9.5)
       latinverb_chart_presenter
