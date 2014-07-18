@@ -1,0 +1,7 @@
+require 'latinirb/version'
+require 'linguistics_latin'
+require 'linguistics_latin_imperative_block'
+require 'latinverb'
+require 'macronconversions'
+require 'latinirb/LatinIRB'
+require 'latinirb/latinirb_paradigmatic_verbs'

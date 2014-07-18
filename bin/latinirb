@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'active_support/all'
-require 'latinirb/LatinIRB'
+require 'latinirb'
 require 'pp'
 
-pp $LOAD_PATH
 Linguistics::Latin::Util::LatinIRB.begin
