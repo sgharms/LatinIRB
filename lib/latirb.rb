@@ -18,5 +18,10 @@ def b(f)
   puts f.active_voice_indicative_mood_present_tense_first_person_singular_number
 end
 
+Kernel.class_eval do
+  def chart(latin_verb)
+  end
+end
+
 # Start up the REPL
 irb
