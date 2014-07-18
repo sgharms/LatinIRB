@@ -1,3 +1,4 @@
+require 'forwardable'
 require 'latinirb/version'
 require 'linguistics_latin'
 require 'linguistics_latin_imperative_block'
