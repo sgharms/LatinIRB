@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'linguistics_latin'
   s.add_runtime_dependency 'macronconversions'
   s.add_runtime_dependency 'latinverb', '~> 0.9.5'
+  s.add_runtime_dependency 'latinverb_chart_presenter'
 end

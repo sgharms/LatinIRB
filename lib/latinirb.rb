@@ -1,6 +1,7 @@
 require 'latinirb/version'
 require 'linguistics_latin'
 require 'linguistics_latin_imperative_block'
+require 'latinverb_chart_presenter'
 require 'latinverb'
 require 'macronconversions'
 require 'latinirb/LatinIRB'
