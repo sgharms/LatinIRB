@@ -43,6 +43,12 @@ so that the heuristics work.  To this end, you may use MacronConversions to
 convert ASCII TeX-style transliterations of macronized vowels to produce the
 correct string:
 
+If your input device supports the quick entry of characters with macrons:
+
+    lv = LatinVerb.new("amō amāre amāvī amatum")
+
+But if not, you can convert an ASCII representation of the same data:
+
     lv = LatinVerb.new(Text::Latex::Util::Macronconversions.convert('am\={o} am\={a}re am\={a}v\={i} amatum', :mc))
     lv.active\_voice\_indicative\_mood\_present\_tense\_first\_person\_singular\_number #=> amō
 

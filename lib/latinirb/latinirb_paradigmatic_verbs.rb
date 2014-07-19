@@ -15,6 +15,8 @@ def b(f)
 end
 
 module Kernel
+  LatinVerb = Linguistics::Latin::Verb::LatinVerb
+
   def chart(latin_verb=nil)
     puts "USAGE: chart (a_latin_verb|latin_verb_string)" if latin_verb.nil?
     verb = is_latinverb?(latin_verb) ? latin_verb : verb_for_string(latin_verb)
