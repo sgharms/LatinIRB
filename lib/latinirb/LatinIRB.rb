@@ -46,7 +46,7 @@ module Linguistics
           @CONF = IRB.conf
 
           # This will be the script IRB sources on execution. You can
-          # pre-define variables (@aFirst, etc.) and convenience methods here.
+          # pre-define variables (AFIRST, etc.) and convenience methods here.
 
           @CONF[:SCRIPT]=File.join(File.dirname(__FILE__),  %w|latinirb_paradigmatic_verbs.rb|)
 
