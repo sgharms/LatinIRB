@@ -3,7 +3,7 @@ TO_BE     = Linguistics::Latin::Verb::LatinVerb.new %q(sum esse fuī futūrus)
 TO_CARRY  = Linguistics::Latin::Verb::LatinVerb.new %q(ferō ferre tulī lātum)
 TO_COME   = Linguistics::Latin::Verb::LatinVerb.new %q(eō īre ivī itum)
 
-AFIRST_ASCII_STRING = 'am\={o}, am\={a}re, am\={a}v\={\i}, amatum'
+AFIRST_ASCII_STRING = 'am\={o} am\={a}re am\={a}v\={\i} amatum'
 AFIRST_STRING = Text::Latex::Util::Macronconversions.convert(AFIRST_ASCII_STRING, 'mc')
 
 def j
