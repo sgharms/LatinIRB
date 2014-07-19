@@ -84,14 +84,17 @@ As well as some primary irregulars:
 
 Tab-completion of the conjugation \"vectors\" is supported.
 
-Helpful methods `chart(verb)` which prints a verb's chart as well as `b(verb)`
-which prints the
-`active_voice_indicative_mood_present_tense_first_person_singular_number` of
-`verb`.
+Helpful methods:
+
+* `LatinVerb.new("amō amāre amāvī amatum")`: create a new LatinVerb instance
+* `v(latex_representation_of_macronized_string)`
+* `chart(verb)`: prints a verb's chart
+* `b(verb)`: prints the `active_voice_indicative_mood_present_tense_first_person_singular_number` of `verb`
 
 Verb strings can be entered using the LaTeX-style ASCII representations of
 macron-bearing letters e.g.: \\={e}, \\={a}, and NB: \\={\\i}
-          EOT
+EOT
+puts ""
         end
 
         def self.set_required_main_irb_context
