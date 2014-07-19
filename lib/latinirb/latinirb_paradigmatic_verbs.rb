@@ -31,6 +31,8 @@ module Kernel
     macronized_string = Text::Latex::Util::Macronconversions.convert(verb_string, 'mc').gsub(',', '')
     Linguistics::Latin::Verb::LatinVerb.new(macronized_string)
   end
+
+  alias :v :verb_for_string
 end
 
 # Start up the REPL
