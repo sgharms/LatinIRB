@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
 require 'latinirb'
-require 'pp'
 
 Linguistics::Latin::Util::LatinIRB.begin
