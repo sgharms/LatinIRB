@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    latinirb (1.0.pre.3)
+    latinirb (1.0.pre.4)
       activesupport (>= 4)
       latinverb (= 1.0.0.pre.2)
       latinverb_chart_presenter
@@ -56,6 +56,7 @@ GEM
     latinverb_infinitives (0.0.1)
     latinverb_irregular_imperatives_retriever (0.0.1)
     latinverb_irregular_infinitives_retriever (0.0.1)
+      latinverb_irregular_verb_definition_consumer
       linguistics_latin
     latinverb_irregular_participles_retriever (0.0.1)
     latinverb_irregular_verb_definition_consumer (0.0.1)
@@ -68,6 +69,7 @@ GEM
       linguistics_latin_tense_block
     latinverb_serialization (0.0.1)
     latinverb_stem_deriver (0.0.1)
+      latinverb_deponent_string_deriver
     latinverb_type_evaluator (0.0.1)
       latinverb_deponent_string_deriver
       linguistics_latin (~> 0.0.2)

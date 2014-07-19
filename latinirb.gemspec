@@ -17,9 +17,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency 'activesupport', '>= 4'
-  s.add_runtime_dependency 'latinverb', '1.0.0.pre.2'
-  s.add_runtime_dependency 'linguistics_latin'
-  s.add_runtime_dependency 'macronconversions'
-  s.add_runtime_dependency 'latinverb_chart_presenter'
+  s.add_runtime_dependency 'linguistics_latin', '~> 1.0.0'
+  s.add_runtime_dependency 'macronconversions', '~> 1.0.0'
+  s.add_runtime_dependency 'latinverb', '~> 1.0.0'
+  s.add_runtime_dependency 'latinverb_chart_presenter', '~> 1.0.0'
 end
