@@ -12,7 +12,7 @@ form of a verb.
 
 An primary use case would be:
 
-    AFIRST.active\_voice\_indicative\_mood\_present\_tense\_first\_person\_singular\_number #=> amō
+    AFIRST.active_voice_indicative_mood_present_tense_first_person_singular_number #=> amō
 
 This can be a bit verbose to type, so I recommend taking advantage of `TAB`
 completion:
@@ -50,7 +50,7 @@ If your input device supports the quick entry of characters with macrons:
 But if not, you can convert an ASCII representation of the same data:
 
     lv = LatinVerb.new(Text::Latex::Util::Macronconversions.convert('am\={o} am\={a}re am\={a}v\={i} amatum', :mc))
-    lv.active\_voice\_indicative\_mood\_present\_tense\_first\_person\_singular\_number #=> amō
+    lv.active_voice_indicative_mood_present_tense_first_person_singular_number #=> amō
 
 This is a bit _too_ much to have to type, so LatinIRB has the method `verb` or
 `v` that combines the text conversion and the verb instantiation e.g.
@@ -85,10 +85,10 @@ number / and person.
 
 As such methods are of the form:
 
-    (active|passive)\_voice\_(indicative|subjunctive)\_mood\_(present|imperfect|perfect|pastperfect|futureperfect|etc.)tense\_(first|second|third)\_person\_(singular|plural)\_number
+    (active|passive)_voice_(indicative|subjunctive)_mood_(present|imperfect|perfect|pastperfect|futureperfect|etc.)tense_(first|second|third)_person_(singular|plural)_number
 
 This will return a single value.  Where the result is ambiguous (e.g. 'number'
-is not provided) multiple values are returned.  an exhaustive list of options
+is not provided) multiple values are returned.  An exhaustive list of options
 follows below.
 
 ### MULTIPLEX VECTORS
@@ -98,162 +98,162 @@ such as "present tense."  For their invocation, see below
 
 ### Comprehensive List of Singular Vectors
 
-  * `LatinVerb#active\_voice\_indicative\_mood\_present\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_present\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_present\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_present\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_present\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_present\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#active_voice_indicative_mood_present_tense_first_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_present_tense_second_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_present_tense_third_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_present_tense_first_person_plural_number`
+  * `LatinVerb#active_voice_indicative_mood_present_tense_second_person_plural_number`
+  * `LatinVerb#active_voice_indicative_mood_present_tense_third_person_plural_number`
 
-  * `LatinVerb#active\_voice\_indicative\_mood\_imperfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_imperfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_imperfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_imperfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_imperfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_imperfect\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#active_voice_indicative_mood_imperfect_tense_first_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_imperfect_tense_second_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_imperfect_tense_third_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_imperfect_tense_first_person_plural_number`
+  * `LatinVerb#active_voice_indicative_mood_imperfect_tense_second_person_plural_number`
+  * `LatinVerb#active_voice_indicative_mood_imperfect_tense_third_person_plural_number`
 
-  * `LatinVerb#active\_voice\_indicative\_mood\_future\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_future\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_future\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_future\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_future\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_future\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#active_voice_indicative_mood_future_tense_first_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_future_tense_second_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_future_tense_third_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_future_tense_first_person_plural_number`
+  * `LatinVerb#active_voice_indicative_mood_future_tense_second_person_plural_number`
+  * `LatinVerb#active_voice_indicative_mood_future_tense_third_person_plural_number`
 
-  * `LatinVerb#active\_voice\_indicative\_mood\_perfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_perfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_perfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_perfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_perfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_perfect\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#active_voice_indicative_mood_perfect_tense_first_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_perfect_tense_second_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_perfect_tense_third_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_perfect_tense_first_person_plural_number`
+  * `LatinVerb#active_voice_indicative_mood_perfect_tense_second_person_plural_number`
+  * `LatinVerb#active_voice_indicative_mood_perfect_tense_third_person_plural_number`
 
-  * `LatinVerb#active\_voice\_indicative\_mood\_pastperfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_pastperfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_pastperfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_pastperfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_pastperfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_pastperfect\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#active_voice_indicative_mood_pastperfect_tense_first_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_pastperfect_tense_second_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_pastperfect_tense_third_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_pastperfect_tense_first_person_plural_number`
+  * `LatinVerb#active_voice_indicative_mood_pastperfect_tense_second_person_plural_number`
+  * `LatinVerb#active_voice_indicative_mood_pastperfect_tense_third_person_plural_number`
 
-  * `LatinVerb#active\_voice\_indicative\_mood\_futureperfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_futureperfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_futureperfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_futureperfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_futureperfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_indicative\_mood\_futureperfect\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#active_voice_indicative_mood_futureperfect_tense_first_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_futureperfect_tense_second_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_futureperfect_tense_third_person_singular_number`
+  * `LatinVerb#active_voice_indicative_mood_futureperfect_tense_first_person_plural_number`
+  * `LatinVerb#active_voice_indicative_mood_futureperfect_tense_second_person_plural_number`
+  * `LatinVerb#active_voice_indicative_mood_futureperfect_tense_third_person_plural_number`
 
-  * `LatinVerb#passive\_voice\_indicative\_mood\_present\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_present\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_present\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_present\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_present\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_present\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#passive_voice_indicative_mood_present_tense_first_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_present_tense_second_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_present_tense_third_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_present_tense_first_person_plural_number`
+  * `LatinVerb#passive_voice_indicative_mood_present_tense_second_person_plural_number`
+  * `LatinVerb#passive_voice_indicative_mood_present_tense_third_person_plural_number`
 
-  * `LatinVerb#passive\_voice\_indicative\_mood\_imperfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_imperfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_imperfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_imperfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_imperfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_imperfect\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#passive_voice_indicative_mood_imperfect_tense_first_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_imperfect_tense_second_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_imperfect_tense_third_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_imperfect_tense_first_person_plural_number`
+  * `LatinVerb#passive_voice_indicative_mood_imperfect_tense_second_person_plural_number`
+  * `LatinVerb#passive_voice_indicative_mood_imperfect_tense_third_person_plural_number`
 
-  * `LatinVerb#passive\_voice\_indicative\_mood\_future\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_future\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_future\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_future\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_future\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_future\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#passive_voice_indicative_mood_future_tense_first_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_future_tense_second_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_future_tense_third_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_future_tense_first_person_plural_number`
+  * `LatinVerb#passive_voice_indicative_mood_future_tense_second_person_plural_number`
+  * `LatinVerb#passive_voice_indicative_mood_future_tense_third_person_plural_number`
 
-  * `LatinVerb#passive\_voice\_indicative\_mood\_perfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_perfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_perfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_perfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_perfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_perfect\_tense\_third\_person\_plural\_number.to\_s)`
+  * `LatinVerb#passive_voice_indicative_mood_perfect_tense_first_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_perfect_tense_second_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_perfect_tense_third_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_perfect_tense_first_person_plural_number`
+  * `LatinVerb#passive_voice_indicative_mood_perfect_tense_second_person_plural_number`
+  * `LatinVerb#passive_voice_indicative_mood_perfect_tense_third_person_plural_number.to_s)`
 
-  * `LatinVerb#passive\_voice\_indicative\_mood\_pastperfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_pastperfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_pastperfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_pastperfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_pastperfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_pastperfect\_tense\_third\_person\_plural\_number.to\_s)`
+  * `LatinVerb#passive_voice_indicative_mood_pastperfect_tense_first_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_pastperfect_tense_second_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_pastperfect_tense_third_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_pastperfect_tense_first_person_plural_number`
+  * `LatinVerb#passive_voice_indicative_mood_pastperfect_tense_second_person_plural_number`
+  * `LatinVerb#passive_voice_indicative_mood_pastperfect_tense_third_person_plural_number.to_s)`
 
-  * `LatinVerb#passive\_voice\_indicative\_mood\_futureperfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_futureperfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_futureperfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_futureperfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_futureperfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_futureperfect\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#passive_voice_indicative_mood_futureperfect_tense_first_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_futureperfect_tense_second_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_futureperfect_tense_third_person_singular_number`
+  * `LatinVerb#passive_voice_indicative_mood_futureperfect_tense_first_person_plural_number`
+  * `LatinVerb#passive_voice_indicative_mood_futureperfect_tense_second_person_plural_number`
+  * `LatinVerb#passive_voice_indicative_mood_futureperfect_tense_third_person_plural_number`
 
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_present\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_present\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_present\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_present\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_present\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_present\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#active_voice_subjunctive_mood_present_tense_first_person_singular_number`
+  * `LatinVerb#active_voice_subjunctive_mood_present_tense_second_person_singular_number`
+  * `LatinVerb#active_voice_subjunctive_mood_present_tense_third_person_singular_number`
+  * `LatinVerb#active_voice_subjunctive_mood_present_tense_first_person_plural_number`
+  * `LatinVerb#active_voice_subjunctive_mood_present_tense_second_person_plural_number`
+  * `LatinVerb#active_voice_subjunctive_mood_present_tense_third_person_plural_number`
 
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_imperfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_imperfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_imperfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_imperfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_imperfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_imperfect\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#active_voice_subjunctive_mood_imperfect_tense_first_person_singular_number`
+  * `LatinVerb#active_voice_subjunctive_mood_imperfect_tense_second_person_singular_number`
+  * `LatinVerb#active_voice_subjunctive_mood_imperfect_tense_third_person_singular_number`
+  * `LatinVerb#active_voice_subjunctive_mood_imperfect_tense_first_person_plural_number`
+  * `LatinVerb#active_voice_subjunctive_mood_imperfect_tense_second_person_plural_number`
+  * `LatinVerb#active_voice_subjunctive_mood_imperfect_tense_third_person_plural_number`
 
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_perfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_perfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_perfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_perfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_perfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_perfect\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#active_voice_subjunctive_mood_perfect_tense_first_person_singular_number`
+  * `LatinVerb#active_voice_subjunctive_mood_perfect_tense_second_person_singular_number`
+  * `LatinVerb#active_voice_subjunctive_mood_perfect_tense_third_person_singular_number`
+  * `LatinVerb#active_voice_subjunctive_mood_perfect_tense_first_person_plural_number`
+  * `LatinVerb#active_voice_subjunctive_mood_perfect_tense_second_person_plural_number`
+  * `LatinVerb#active_voice_subjunctive_mood_perfect_tense_third_person_plural_number`
 
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_pastperfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_pastperfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_pastperfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_pastperfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_pastperfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_pastperfect\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#active_voice_subjunctive_mood_pastperfect_tense_first_person_singular_number`
+  * `LatinVerb#active_voice_subjunctive_mood_pastperfect_tense_second_person_singular_number`
+  * `LatinVerb#active_voice_subjunctive_mood_pastperfect_tense_third_person_singular_number`
+  * `LatinVerb#active_voice_subjunctive_mood_pastperfect_tense_first_person_plural_number`
+  * `LatinVerb#active_voice_subjunctive_mood_pastperfect_tense_second_person_plural_number`
+  * `LatinVerb#active_voice_subjunctive_mood_pastperfect_tense_third_person_plural_number`
 
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_present\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_present\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_present\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_present\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_present\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_present\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_present_tense_first_person_singular_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_present_tense_second_person_singular_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_present_tense_third_person_singular_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_present_tense_first_person_plural_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_present_tense_second_person_plural_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_present_tense_third_person_plural_number`
 
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_imperfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_imperfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_imperfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_imperfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_imperfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_imperfect\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_imperfect_tense_first_person_singular_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_imperfect_tense_second_person_singular_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_imperfect_tense_third_person_singular_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_imperfect_tense_first_person_plural_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_imperfect_tense_second_person_plural_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_imperfect_tense_third_person_plural_number`
 
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_perfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_perfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_perfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_perfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_perfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_perfect\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_perfect_tense_first_person_singular_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_perfect_tense_second_person_singular_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_perfect_tense_third_person_singular_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_perfect_tense_first_person_plural_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_perfect_tense_second_person_plural_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_perfect_tense_third_person_plural_number`
 
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_pastperfect\_tense\_first\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_pastperfect\_tense\_second\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_pastperfect\_tense\_third\_person\_singular\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_pastperfect\_tense\_first\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_pastperfect\_tense\_second\_person\_plural\_number`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_pastperfect\_tense\_third\_person\_plural\_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_pastperfect_tense_first_person_singular_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_pastperfect_tense_second_person_singular_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_pastperfect_tense_third_person_singular_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_pastperfect_tense_first_person_plural_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_pastperfect_tense_second_person_plural_number`
+  * `LatinVerb#passive_voice_subjunctive_mood_pastperfect_tense_third_person_plural_number`
 
-  * `LatinVerb#active\_voice\_imperative\_mood\_future\_tense`
-  * `LatinVerb#active\_voice\_imperative\_mood\_present\_tense`
+  * `LatinVerb#active_voice_imperative_mood_future_tense`
+  * `LatinVerb#active_voice_imperative_mood_present_tense`
   * `LatinVerb#imperatives` (_aggregator method_)
 
-  * `LatinVerb#present\_active\_participle`
-  * `LatinVerb#future\_active\_participle`
-  * `LatinVerb#perfect\_passive\_participle`
-  * `LatinVerb#future\_passive\_participle`
+  * `LatinVerb#present_active_participle`
+  * `LatinVerb#future_active_participle`
+  * `LatinVerb#perfect_passive_participle`
+  * `LatinVerb#future_passive_participle`
 
   * `LatinVerb#infinitives` (_aggregator method_ : returns a keyed hash)
-  * `LatinVerb#future\_active\_infinitive`
-  * `LatinVerb#future\_passive\_infinitive`
-  * `LatinVerb#perfect\_active\_infinitive`
-  * `LatinVerb#perfect\_passive\_infinitive`
-  * `LatinVerb#present\_active\_infinitive`
-  * `LatinVerb#present\_passive\_infinitive`
+  * `LatinVerb#future_active_infinitive`
+  * `LatinVerb#future_passive_infinitive`
+  * `LatinVerb#perfect_active_infinitive`
+  * `LatinVerb#perfect_passive_infinitive`
+  * `LatinVerb#present_active_infinitive`
+  * `LatinVerb#present_passive_infinitive`
 
 ### Ambiguous Methods
 
@@ -261,35 +261,35 @@ A voice, mood, and tense are all required for resolution of answers.
 LatinVerb does not repsect ambiguity in those vectors.  It _does_ respect
 ambiguity in the person and number specifiers.  Thus, you *may* say:
 
-  * `LatinVerb#active\_voice\_indicative\_mood\_present\_tense\_first\_person`
-  * `LatinVerb#active\_voice\_indicative\_mood\_present\_tense\_singular\_number`
+  * `LatinVerb#active_voice_indicative_mood_present_tense_first_person`
+  * `LatinVerb#active_voice_indicative_mood_present_tense_singular_number`
 
 This will return an array containing all possible candidates.  Thus, for
 each of the items below <em>(first|second|third)_person</em> or
 <em>(singular|plural)_number</em> may be postpended.
 
-  * `LatinVerb#active\_voice\_imperative\_mood\_future\_tense`
-  * `LatinVerb#active\_voice\_imperative\_mood\_present\_tense`
-  * `LatinVerb#active\_voice\_indicative\_mood\_future\_tense`
-  * `LatinVerb#active\_voice\_indicative\_mood\_futureperfect\_tense`
-  * `LatinVerb#active\_voice\_indicative\_mood\_imperfect\_tense`
-  * `LatinVerb#active\_voice\_indicative\_mood\_pastperfect\_tense`
-  * `LatinVerb#active\_voice\_indicative\_mood\_perfect\_tense`
-  * `LatinVerb#active\_voice\_indicative\_mood\_present\_tense`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_imperfect\_tense`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_pastperfect\_tense`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_perfect\_tense`
-  * `LatinVerb#active\_voice\_subjunctive\_mood\_present\_tense`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_future\_tense`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_futureperfect\_tense`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_imperfect\_tense`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_pastperfect\_tense`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_perfect\_tense`
-  * `LatinVerb#passive\_voice\_indicative\_mood\_present\_tense`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_imperfect\_tense`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_pastperfect\_tense`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_perfect\_tense`
-  * `LatinVerb#passive\_voice\_subjunctive\_mood\_present\_tense`
+  * `LatinVerb#active_voice_imperative_mood_future_tense`
+  * `LatinVerb#active_voice_imperative_mood_present_tense`
+  * `LatinVerb#active_voice_indicative_mood_future_tense`
+  * `LatinVerb#active_voice_indicative_mood_futureperfect_tense`
+  * `LatinVerb#active_voice_indicative_mood_imperfect_tense`
+  * `LatinVerb#active_voice_indicative_mood_pastperfect_tense`
+  * `LatinVerb#active_voice_indicative_mood_perfect_tense`
+  * `LatinVerb#active_voice_indicative_mood_present_tense`
+  * `LatinVerb#active_voice_subjunctive_mood_imperfect_tense`
+  * `LatinVerb#active_voice_subjunctive_mood_pastperfect_tense`
+  * `LatinVerb#active_voice_subjunctive_mood_perfect_tense`
+  * `LatinVerb#active_voice_subjunctive_mood_present_tense`
+  * `LatinVerb#passive_voice_indicative_mood_future_tense`
+  * `LatinVerb#passive_voice_indicative_mood_futureperfect_tense`
+  * `LatinVerb#passive_voice_indicative_mood_imperfect_tense`
+  * `LatinVerb#passive_voice_indicative_mood_pastperfect_tense`
+  * `LatinVerb#passive_voice_indicative_mood_perfect_tense`
+  * `LatinVerb#passive_voice_indicative_mood_present_tense`
+  * `LatinVerb#passive_voice_subjunctive_mood_imperfect_tense`
+  * `LatinVerb#passive_voice_subjunctive_mood_pastperfect_tense`
+  * `LatinVerb#passive_voice_subjunctive_mood_perfect_tense`
+  * `LatinVerb#passive_voice_subjunctive_mood_present_tense`
 
 ## AUTHOR
 
