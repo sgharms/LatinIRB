@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    latinirb (1.0.2)
+    latinirb (1.0.3)
       latinverb (~> 1.0)
       latinverb_chart_presenter (~> 1.0)
       linguistics_latin (~> 1.0)
@@ -10,11 +10,6 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    byebug (3.1.2)
-      columnize (~> 0.8)
-      debugger-linecache (~> 1.2)
-    columnize (0.8.9)
-    debugger-linecache (1.2.0)
     latinverb (1.0.2)
       latinverb_classifier (~> 1.0)
       latinverb_deponent_string_deriver (~> 1.0)
@@ -64,18 +59,20 @@ GEM
     latinverb_type_evaluator (1.0.1)
       latinverb_deponent_string_deriver (~> 1.0)
       linguistics_latin (~> 1.0)
-    linguistics_latin (1.0.1)
+    linguistics_latin (1.0.2)
     linguistics_latin_tense_block (1.0.0)
       linguistics_latin
     macronconversions (1.0.0)
       multi_json (~> 1.8)
       rake
-    multi_json (1.10.1)
+    multi_json (1.15.0)
     rake (13.0.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
   latinirb!
+
+BUNDLED WITH
+   2.1.2
