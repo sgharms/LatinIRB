@@ -6,6 +6,8 @@ TO_COME   = Linguistics::Latin::Verb::LatinVerb.new %q(eō īre ivī itum)
 AFIRST_ASCII_STRING = 'am\={o} am\={a}re am\={a}v\={\i} amatum'
 AFIRST_STRING = Text::Latex::Util::Macronconversions.convert(AFIRST_ASCII_STRING, 'mc')
 
+SEED = {}
+
 def j
   puts AFIRST.active_voice_indicative_mood_present_tense_first_person_singular_number
 end
@@ -35,6 +37,26 @@ module Kernel
     Linguistics::Latin::Verb::LatinVerb.new(macronized_string)
   end
 
+  def load_seedfile
+    if File.exists?("seedfile.txt")
+      File.open("seedfile.txt")
+        .readlines
+        .to_a
+        .filter { |e| e =~ /\w+/ }
+        .reduce(SEED) do |memo, l|
+        k, v = l.split(':')
+        memo[k] = verb_for_string(v)
+        memo
+      end
+    end
+    keys = SEED.keys
+    if keys.count > 0 && keys.count < 10
+      puts "Imported #{SEED.keys.count} items:"
+      keys.each { |k| puts k }
+    end
+  end
+
+  alias :s :load_seedfile
   alias :v :verb_for_string
 end
 

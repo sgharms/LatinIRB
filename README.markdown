@@ -57,6 +57,21 @@ This is a bit _too_ much to have to type, so LatinIRB has the method `verb` or
 
     copy_of_a_first = v( 'am\={o} am\={a}re am\={a}v\={i} amatum')
 
+Finally, LatinIRB exposes a method `s()` which loads the contents of a file of the form:
+
+```text
+reckon:put\={o}, put\={a}re, put\={a}v\={\i}, putatum
+```
+
+and saves it into a `Hash` called `SEED` where the key remains e.g. `reckon`
+but points to a LatinVerb instance such that one can:
+
+```ruby
+chart(SEED['reckon'])
+```
+
+as described above.
+
 ## VIEWING
 
 The environment takes advantage of Ruby's UTF-8 support to display the verbs
