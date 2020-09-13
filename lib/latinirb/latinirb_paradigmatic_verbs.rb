@@ -28,6 +28,9 @@ module Kernel
   end
 
   def verb_for_string(verb_string)
+    if verb_string !~ /\\/
+      raise ArgumentError.new "No \\ characters detected in #{verb_string}. Use single-quote to ensure they aren't escaped."
+    end
     macronized_string = Text::Latex::Util::Macronconversions.convert(verb_string, 'mc').gsub(',', '')
     Linguistics::Latin::Verb::LatinVerb.new(macronized_string)
   end
