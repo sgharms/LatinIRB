@@ -1,5 +1,18 @@
 # LatinIRB
 
+## DOCKER USE
+
+The following application is wonderfully used within Docker. To use it so:
+
+```shell
+$ docker build -t latinirb . 
+$ docker run -it --rm -v $(pwd):/workarea latinirb
+
+... visual content snipped ...
+LatinIRB > puts AFIRST.active_voice_indicative_mood_present_tense_first_person_singular_number
+amō
+```
+
 ## DESCRIPTION
 
 LatinIRB is an IRB session in which a user can interact with paradigmatic Latin
@@ -70,7 +83,7 @@ but points to a LatinVerb instance such that one can:
 chart(SEED['reckon'])
 ```
 
-as described above.
+as described below.
 
 ## VIEWING
 
