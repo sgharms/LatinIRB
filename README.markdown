@@ -1,5 +1,18 @@
 # LatinIRB
 
+## DOCKER USE
+
+The following application is wonderfully used within Docker. To use it so:
+
+```shell
+$ docker build -t latinirb . 
+$ docker run -it --rm -v $(pwd):/workarea latinirb
+
+... visual content snipped ...
+LatinIRB > puts AFIRST.active_voice_indicative_mood_present_tense_first_person_singular_number
+amō
+```
+
 ## DESCRIPTION
 
 LatinIRB is an IRB session in which a user can interact with paradigmatic Latin
@@ -56,6 +69,21 @@ This is a bit _too_ much to have to type, so LatinIRB has the method `verb` or
 `v` that combines the text conversion and the verb instantiation e.g.
 
     copy_of_a_first = v( 'am\={o} am\={a}re am\={a}v\={i} amatum')
+
+Finally, LatinIRB exposes a method `s()` which loads the contents of a file of the form:
+
+```text
+reckon:put\={o}, put\={a}re, put\={a}v\={\i}, putatum
+```
+
+and saves it into a `Hash` called `SEED` where the key remains e.g. `reckon`
+but points to a LatinVerb instance such that one can:
+
+```ruby
+chart(SEED['reckon'])
+```
+
+as described below.
 
 ## VIEWING
 
