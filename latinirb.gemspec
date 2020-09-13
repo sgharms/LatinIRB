@@ -12,9 +12,13 @@ Gem::Specification.new do |s|
   s.summary     = %q{Gem designed to explore verbs created by LatinVerb}
   s.description = %q{This gem takes initial data describing a LatinVerb and allows this is be instantiated into an IRB session.  Here the verb can be queried or displayed.}
 
-  s.files         = `git ls-files`.split("\n")
+  s.files         = [ "./lib/latinirb.rb",
+                      "./lib/latinirb/LatinIRB.rb",
+                      "./lib/latinirb/version.rb",
+                      "./lib/latinirb/latinirb_paradigmatic_verbs.rb"
+  ]
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.executables   = ["./bin/latinirb"].map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
   s.add_runtime_dependency 'linguistics_latin', '~> 1.0'
